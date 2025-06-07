@@ -24,3 +24,11 @@ agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True, handle_pa
 
 # 运行代理
 agent_executor.invoke({"input": "中国有哪些省份呢?用中文回复"})
+
+
+
+# initialize_agent() 是一种快速构建并封装好执行器（AgentExecutor）的简化方式，你可以直接用它来执行 .invoke()。
+# create_self_ask_with_search_agent() 则是低层构建方式，你要手动创建 AgentExecutor 来运行 Agent。
+
+# initialize_agent不需要手动创建 AgentExecutor，LangChain 已经帮你包好了。一行就搞定了 Agent + Executor 的绑定。
+# 但是要组合复杂流程或多个模型	自定义 Agent + Executor 更灵活
